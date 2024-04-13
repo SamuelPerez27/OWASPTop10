@@ -1,0 +1,25 @@
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(80) UNIQUE NOT NULL,
+  password blob NOT NULL,
+  login_attempts INT DEFAULT 0 NOT NULL,
+  is_blocked BOOLEAN DEFAULT FALSE NOT NULL,
+  last_login DATETIME
+);
+
+insert into users (username, password) values ('admin@hotmail.com', 'admin');
+
+INSERT INTO users (username, password, login_attempts, is_blocked)
+VALUES ('sam2@hotmail.com', b'$2b$12$SS2cz32E.ALi34kovk4iEevZaMf75DHv5wucOr19FKM/wqA6vnPQG', 0, FALSE);
+
+
+INSERT INTO users (username, password, login_attempts, is_blocked)
+VALUES ('bloqueado@hotmail.com', '123456', 0, TRUE);
+
+
+
+{'iat': 1712945512, 'exp': 1712946112}
+
+
+1712945512
+1712946112
